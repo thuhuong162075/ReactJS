@@ -1,0 +1,10 @@
+.Input {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+  font-size: 40px;
+  height: 70px;
+  background-color: #858694;
+  color: #fff;
+  padding-right: 20px; }

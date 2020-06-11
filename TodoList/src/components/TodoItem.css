@@ -1,0 +1,29 @@
+.TodoItem {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    display: block;
+    border-top: 2px solid #ededed;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.TodoItem .TodoItem-complete {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+.TodoItem .checkImg {
+    cursor: pointer;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.TodoItem .img {
+    position: absolute;
+    cursor: pointer;
+}
+.TodoItem .editImg {
+    right: 50px;
+}
+.TodoItem .deleteImg {
+    right: 30px;
+}

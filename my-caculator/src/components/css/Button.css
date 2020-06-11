@@ -1,0 +1,15 @@
+.Button {
+  width: 99px;
+  height: 59px;
+  background-color: #E0E0E0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  border-left: 1px solid #858694;
+  border-top: 1px solid #858694;
+  cursor: pointer; }
+  .Button.zero {
+    width: 199px; }
+  .Button.operator {
+    background-color: #F5923E; }

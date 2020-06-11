@@ -1,0 +1,13 @@
+.Caculator {
+    width: 400px;
+    margin: 20px auto;
+    .Info {
+        height: 300px;
+        background-color: #E0E0E0;
+        border-bottom: 1px solid #858694;
+        border-right: 1px solid #858694;
+        .row {
+            display: flex;
+        }
+    }
+}

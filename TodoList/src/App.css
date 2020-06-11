@@ -1,0 +1,54 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.App {
+  display: block;
+  background: #f5f5f5;
+  color: #4d4d4d;
+  width: 500px;
+  margin: 20px auto;
+  box-shadow: 10px 10px 5px #aaaaaa;
+}
+.App .title {
+  font-size: 40px;
+  color: #ffffff;
+  text-align: center;
+  background-image: url(./img/bgTitle.png);
+}
+.App .Header {
+  display: flex;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.App .Header img {
+  cursor: pointer;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.App .Header input {
+  font-size: 20px;
+  border: none;
+  width: 100%;
+  font-weight: 300;
+  background: #f5f5f5;
+}
+.App .Header input:focus {
+  outline: none;
+}
+.App .Footer {
+  display: flex;
+  height: 50px;
+  position: relative;
+  align-items: center;
+  border-top: 2px solid #ededed;
+}
+.App .Footer .totalItem {
+  position: absolute;
+  left: 20px;
+}
+.App .Footer .clear-complete {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}

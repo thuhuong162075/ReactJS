@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+.App {
+  display: block;
+  color: #4d4d4d;
+  background-image: url(../img/bgApp.png);
+  background-size: 100%;
+  width: 600px;
+  margin: 20px auto;
+  box-shadow: 10px 10px 5px #aaaaaa; }
+  .App .title {
+    font-size: 40px;
+    color: #ffffff;
+    text-align: center;
+    background-image: url(../img/bgTitle.png); }
+  .App .body {
+    background: #ffffff;
+    border-radius: 20px;
+    margin: 30px; }
+    .App .body .Header {
+      display: flex;
+      padding-top: 15px;
+      padding-bottom: 15px; }
+      .App .body .Header img {
+        cursor: pointer;
+        margin-left: 20px;
+        margin-right: 20px; }
+      .App .body .Header input {
+        font-size: 20px;
+        border: none;
+        width: 100%;
+        font-weight: 300px; }
+        .App .body .Header input:focus {
+          outline: none; }
+    .App .body .Footer {
+      display: flex;
+      height: 50px;
+      align-items: center;
+      border-top: 2px solid #ededed;
+      position: relative; }
+      .App .body .Footer .totalItem {
+        position: absolute;
+        left: 25px; }
+      .App .body .Footer .filter {
+        display: flex;
+        left: 140px;
+        position: absolute; }
+        .App .body .Footer .filter .show {
+          cursor: pointer;
+          margin-right: 20px; }
+      .App .body .Footer .clear-complete {
+        position: absolute;
+        right: 25px;
+        cursor: pointer; }
+
+/*# sourceMappingURL=App.css.map */
