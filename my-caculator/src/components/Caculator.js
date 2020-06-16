@@ -9,7 +9,8 @@ class Caculator extends React.Component {
             input: '0',
             number: '',
             operator: '',
-            result: 0
+            result: 0,
+            flat: 0
         }
     }
     mathOperations(val, num1, num2){
@@ -24,14 +25,14 @@ class Caculator extends React.Component {
         }
     }
     addtoDigit(val) {
-        //console.log(this.state.result)
         if(!this.state.operator && this.state.result === 0) {
             this.setState({
                 input: this.state.input === '0' ? val : this.state.input + val
             })       
         }else {
             this.setState({
-                input: val,
+                input: this.state.flat === 1 ? val : this.state.input + val,
+                flat: 0,
                 result: 0
             })  
         }           
@@ -41,6 +42,7 @@ class Caculator extends React.Component {
             this.setState({
                 number: this.state.input,
                 operator: val,
+                flat: 1
             })
         } else {
             this.setState({
@@ -87,15 +89,22 @@ class Caculator extends React.Component {
             number: '',
             operator: '',
             result: 1,
+            flat: 1
         })
     }
     render(){
         const {input, number, operator, result} = this.state
-        console.log('input: ', typeof input, input ,'number: ',  typeof number, number, 'operator: ',typeof operator, operator,'result: ',typeof result, result)
-        
+        //console.log('input: ', typeof input, input ,'number: ',  typeof number, number, 'operator: ',typeof operator, operator,'result: ',typeof result, result)
+        const show = input===number ? (input+operator) : (number+operator+input)
+        console.log(show)
         return (
             <div className="Caculator">
-                <Input>{input.length < 17 ? input : input.slice(0,17)}</Input>
+                <div className="info-show">
+                    <div className="operator-show">
+                        {show}
+                    </div>
+                    <Input>{input.length < 17 ? input : input.slice(0,17)}</Input>
+                </div>
                 <div className="Info">
                     <div className="row">
                         <Button onClick={()=> this.onClearDisplay()}>AC</Button>

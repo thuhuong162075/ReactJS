@@ -1,6 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 .Caculator {
     width: 400px;
     margin: 20px auto;
+    .info-show {
+        background-color: #858694;
+        height: 80px;
+        .operator-show {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 20px;
+        }
+    }
     .Info {
         height: 300px;
         background-color: #E0E0E0;
