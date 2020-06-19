@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.ListItem {
+    display: flex;
+    height: 50px;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    padding-left: 20px;
+    img {
+        padding-right: 20px;
+    }
+}

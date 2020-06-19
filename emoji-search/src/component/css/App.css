@@ -1,0 +1,39 @@
+.App {
+  width: 600px;
+  margin: 20px auto;
+  background: #EFF3F6; }
+  .App .Header {
+    text-align: center;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-family: Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: #333; }
+    .App .Header img {
+      margin-left: 15px;
+      margin-right: 15px; }
+  .App input {
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 18px;
+    padding: 10px 8px;
+    width: 100%; }
+  .App .listIcon {
+    border-top: 1px solid #ccc;
+    height: 400px;
+    overflow-y: auto;
+    margin-top: 10px;
+    padding-bottom: 10px; }
+    .App .listIcon::-webkit-scrollbar {
+      width: 6px;
+      background-color: #F5F5F5; }
+    .App .listIcon::-webkit-scrollbar-thumb {
+      background-color: #000000; }
+    .App .listIcon::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #F5F5F5; }
+
+/*# sourceMappingURL=App.css.map */
