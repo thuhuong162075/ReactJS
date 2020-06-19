@@ -1,0 +1,10 @@
+.Input {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+  font-size: 40px;
+  color: #fff;
+  padding-right: 20px; }
+
+/*# sourceMappingURL=Input.css.map */
