@@ -1,0 +1,23 @@
+@import "variable";
+
+.Header {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    color: rgba(0,0,0,.65);
+    .title-img {
+        padding-left: 50px;
+        img {
+            padding-right: 15px;
+        }
+    }
+    .title {
+        .logo {
+            color: #2b2b2c;
+            font-size: $fzTitle;
+        }
+        .time {
+            font-size: $fzText;
+        }
+    }
+}

@@ -1,0 +1,119 @@
+.Country {
+    @import "Title";
+    padding-bottom: 50px;
+    .detail {
+        .table.country-covid19 {
+            width: 100%;
+            text-align: left;
+            border-radius: 2px 2px 0 0;
+            border-collapse: separate;
+            border-spacing: 0;
+            thead {
+                background: #fafafa;
+                tr {
+                    th {
+                        color: rgba(0,0,0,.85);
+                        font-weight: 500;
+                        text-align: left;
+                        border-bottom: 1px solid #f0f0f0;
+                        padding: 16px 2.3em 16px 16px;
+                        &.nation {
+                            display: flex;
+                            justify-content: space-between;
+                            .filter {
+                                height: 100%;
+                                cursor: pointer;
+                                &.dropdown {
+                                    position: relative;
+                                    display: inline-block;
+                                    .dropdown-content {
+                                        position: absolute;
+                                        right: 0;
+                                        top: 40px;
+                                    }
+                                  }
+                            }
+                        }
+                    }
+
+                }
+            }
+            tbody {
+                .country {
+                    td {
+                        color: rgba(0,0,0,.85);
+                        font-weight: 500;
+                        text-align: left;
+                        border-bottom: 1px solid #f0f0f0;
+                        padding: 16px 2.3em 16px 16px;
+                        color: #868282;
+                        font-size: 14px;
+                        .button {
+                            display: none;
+                        }
+                        .new-cases {
+                                color: #fff;
+                                background-color: #ff4d4f;
+                                border: none;
+                                padding: 8px 16px;
+                                border-radius: 4px;
+                        }
+                        .new_deaths {
+                                color: #fff;
+                                background: rgb(34, 34, 34);
+                                border: none;
+                                padding: 8px 16px;
+                                border-radius: 4px;
+                        }
+                    }
+                    &:hover {
+                        background: #fafafa;
+                    }
+                }
+                
+            }
+        }
+    }
+    .pagination {
+        margin-top: 30px;
+        display: flex;
+        justify-content: flex-end;
+            .pg {
+                cursor: pointer;
+                display: block;
+                margin-right: 10px;
+                padding: 6px 10px;
+                border-radius: 2px;
+                border: 1px solid #d9d9d9;
+                &.active {
+                    border: 1px solid #1b1a1a;
+                }
+                &:focus { outline:0 !important; }
+                
+            }
+            .btn-change {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                display: inline-block;
+                margin-right: 10px;
+                padding: 6px 10px;
+                img {
+                    display: none;
+                }
+                p {
+                    display: block;
+                }
+                &:hover {
+                    p {
+                        display: none;
+                    }
+                    img {
+                        display: block;
+                    }
+                }
+            }
+            
+    }
+}

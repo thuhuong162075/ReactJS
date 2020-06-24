@@ -1,0 +1,90 @@
+.Country {
+  padding-bottom: 50px; }
+  .Country .title {
+    text-align: center;
+    font-size: 40px;
+    color: #222;
+    margin-top: 10px;
+    margin-bottom: 20px; }
+  .Country .detail .table.country-covid19 {
+    width: 100%;
+    text-align: left;
+    border-radius: 2px 2px 0 0;
+    border-collapse: separate;
+    border-spacing: 0; }
+    .Country .detail .table.country-covid19 thead {
+      background: #fafafa; }
+      .Country .detail .table.country-covid19 thead tr th {
+        color: rgba(0, 0, 0, 0.85);
+        font-weight: 500;
+        text-align: left;
+        border-bottom: 1px solid #f0f0f0;
+        padding: 16px 2.3em 16px 16px; }
+        .Country .detail .table.country-covid19 thead tr th.nation {
+          display: flex;
+          justify-content: space-between; }
+          .Country .detail .table.country-covid19 thead tr th.nation .filter {
+            height: 100%;
+            cursor: pointer; }
+            .Country .detail .table.country-covid19 thead tr th.nation .filter.dropdown {
+              position: relative;
+              display: inline-block; }
+              .Country .detail .table.country-covid19 thead tr th.nation .filter.dropdown .dropdown-content {
+                position: absolute;
+                right: 0;
+                top: 40px; }
+    .Country .detail .table.country-covid19 tbody .country td {
+      color: rgba(0, 0, 0, 0.85);
+      font-weight: 500;
+      text-align: left;
+      border-bottom: 1px solid #f0f0f0;
+      padding: 16px 2.3em 16px 16px;
+      color: #868282;
+      font-size: 14px; }
+      .Country .detail .table.country-covid19 tbody .country td .button {
+        display: none; }
+      .Country .detail .table.country-covid19 tbody .country td .new-cases {
+        color: #fff;
+        background-color: #ff4d4f;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px; }
+      .Country .detail .table.country-covid19 tbody .country td .new_deaths {
+        color: #fff;
+        background: #222222;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px; }
+    .Country .detail .table.country-covid19 tbody .country:hover {
+      background: #fafafa; }
+  .Country .pagination {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end; }
+    .Country .pagination .pg {
+      cursor: pointer;
+      display: block;
+      margin-right: 10px;
+      padding: 6px 10px;
+      border-radius: 2px;
+      border: 1px solid #d9d9d9; }
+      .Country .pagination .pg.active {
+        border: 1px solid #1b1a1a; }
+      .Country .pagination .pg:focus {
+        outline: 0 !important; }
+    .Country .pagination .btn-change {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      display: inline-block;
+      margin-right: 10px;
+      padding: 6px 10px; }
+      .Country .pagination .btn-change img {
+        display: none; }
+      .Country .pagination .btn-change p {
+        display: block; }
+      .Country .pagination .btn-change:hover p {
+        display: none; }
+      .Country .pagination .btn-change:hover img {
+        display: block; }

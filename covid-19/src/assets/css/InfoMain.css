@@ -1,0 +1,61 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+.InfoMain {
+  text-align: center;
+  padding: 0 50px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid #efefef; }
+  .InfoMain .title {
+    text-align: center;
+    font-size: 40px;
+    color: #222;
+    margin-top: 10px;
+    margin-bottom: 20px; }
+  .InfoMain .detail {
+    display: flex;
+    flex-direction: row;
+    padding: 15px 10px;
+    margin-bottom: 30px; }
+    .InfoMain .detail .item {
+      display: flex;
+      flex-direction: column;
+      margin: 0 12px; }
+      .InfoMain .detail .item label {
+        display: block;
+        font-size: 16px;
+        color: #222; }
+      .InfoMain .detail .item strong {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 48px;
+        line-height: 48px;
+        min-width: 150px;
+        text-align: center;
+        border-radius: 4px;
+        margin: 3px 0;
+        font: 700 22px/1.6 Arial; }
+      .InfoMain .detail .item p {
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif; }
+      .InfoMain .detail .item.confirmed strong {
+        background: #ff4d4f;
+        color: #fff; }
+      .InfoMain .detail .item.confirmed p {
+        color: #868282; }
+      .InfoMain .detail .item.deaths strong {
+        background: #222;
+        color: #fff; }
+      .InfoMain .detail .item.deaths p {
+        color: #868282; }
+      .InfoMain .detail .item.recovered strong {
+        background: #8cf2cd;
+        color: #00945e; }
+      .InfoMain .detail .item.recovered p {
+        color: #00945e; }

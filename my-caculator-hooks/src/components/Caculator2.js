@@ -10,9 +10,6 @@ function Caculator2() {
     const [result, setResult] = useState(0)
     const [flat, setFlat] = useState(0)
     function mathOperations(val, num1, num2) {
-        // console.log("số 1", num1);
-        // console.log("toán tử", val);
-        // console.log(" số 2", num2);
         switch(val) {
             case '/': return num1/num2;
             case '*': return num1*num2;
