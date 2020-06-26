@@ -3,9 +3,9 @@ import React from 'react';
 function Nation(props) {
   const {item, keySearch} = props
   //console.log(keySearch)
-  // if(keySearch !== '') {
-  //   console.log(item)
-  // }
+  if(keySearch !== '') {
+    console.log(item)
+  }
   return (
     <tr className="country">
         <td>{item.country}</td>

@@ -100,6 +100,9 @@ function Country(props) {
       </button>  
     )
   }
+  const onClickShow = () => {
+    setShowInput(false)
+  }
     
   return (
     <div className="Country">
@@ -115,6 +118,7 @@ function Country(props) {
                     {showInput ? <InputSearch nation = {totalNation} 
                                               onSearch= {onSearch}
                                               onClickReset = {onClickReset}
+                                              onClickShow = {onClickShow}
                                               /> : null}
                   </span>
                 </th>
