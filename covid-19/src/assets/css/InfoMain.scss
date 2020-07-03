@@ -2,7 +2,6 @@
 .InfoMain {
     text-align: center;
     padding: 0 50px;
-    height: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,8 +9,12 @@
     border-bottom: 2px solid #efefef;
 
     @import "Title";
-
+    .chart {
+        height: 500px;
+        width: 900px;
+    }
     .detail {
+        margin-top: 50px;
         display: flex;
         flex-direction: row;
         padding: 15px 10px;

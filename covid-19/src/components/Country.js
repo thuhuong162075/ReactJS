@@ -43,15 +43,17 @@ function Country(props) {
   const [keySearch, setKeySearch] = useState('')
   const [keyword, setKeyword] = useState([])
   const showInputSearch = () => setShowInput(!showInput)
-  const onSearch = (keySearch, keyword) => {
+  const onSearch = async (keySearch, keyword) => {
     setKeySearch(keySearch)
-    props.onHandleSearch(keyword)
+    await props.onHandleSearch(keyword)
     setKeyword(keyword)
+    setShowInput(!showInput)
   }
   const onClickReset = () => {
     props.onClickReset()
     setKeyword('')
     setShowInput(!showInput)
+    setKeySearch('')
   }
   function handlePageChange(newPage) {
     if(onPageChange) {

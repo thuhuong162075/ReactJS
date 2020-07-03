@@ -1,13 +1,14 @@
 import React , {useState, useRef,useEffect} from 'react';
 import "../assets/css/InputSearch.css"
 
-
 function InputSearch(props) {
+  const {nation} = props
   const node = useRef();
   const [searchItem, setSearchItem] = useState('')
-  const [filters, setFilters] = useState('')
-  const {nation} = props
+  const [filters, setFilters] = useState([])
+  const [display, setDisplay] = useState(false)
   function handleSearchTermChange(e) {
+    e.target.value === '' ? setDisplay(false) : setDisplay(true)
     setSearchItem(e.target.value);
   }
   const onClickSearch = () => {
@@ -43,16 +44,34 @@ function InputSearch(props) {
 
   return (
     <div className="dropdown-content" ref={node}>
-      <input placeholder="Search country" 
-              type="text"
-              value={searchItem}
-              onChange={handleSearchTermChange}
-              />
-      <div className="search">
-        <button className="button btn-search" onClick={onClickSearch}>Search</button>
-        <button className="button btn-reset"  onClick={onClickReset}>Reset</button>
-      </div>
+      
+      <input 
+        className="input"
+        placeholder="Search country" 
+        type="text"
+        value={searchItem}
+        onChange={handleSearchTermChange}
+        />
+        {display && (
+          <div className="autoContainer">
+            {filters.map((value, i) => 
+              <div
+                className="option"
+                key={i}
+                tabIndex="0"
+              >
+                <span>{value.country}</span>
+              </div>
+            )}
+          </div>
+        )}
+        <div className="search">
+          <button className="button btn-search" onClick={onClickSearch}>Search</button>
+          <button className="button btn-reset"  onClick={onClickReset}>Reset</button>
+        </div>
+
     </div>
+    
   );
 }
 

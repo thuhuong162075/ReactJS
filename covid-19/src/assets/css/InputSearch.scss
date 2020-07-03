@@ -7,12 +7,19 @@
     border-radius: 2px;
     font-size: 14px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    input {
+    .input {
         width: 150px;
         margin-bottom: 8px;
         display: block;
         padding: 8px;
         border: 1px solid #d9d9d9;
+    }
+    .autoContainer {
+        margin-bottom: 20px;
+        padding-left: 5px;
+        .option {
+            margin-bottom: 10px;
+        }
     }
     .search {
         display: flex;
