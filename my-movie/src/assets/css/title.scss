@@ -1,0 +1,11 @@
+
+@import 'varible.scss';
+.title {
+    padding: 10px;
+    span {
+        font: 25px UTMCafetaRegular;
+        color: $colorTextBox;
+        text-shadow: 1px 1px 1px #1a1a1a;
+        text-transform: uppercase;
+    }
+}

@@ -1,0 +1,36 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+.Gallery {
+  padding: 20px;
+  position: relative;
+  overflow: hidden; }
+  .Gallery .list-group {
+    display: flex;
+    list-style-type: none; }
+    .Gallery .list-group .list-item {
+      margin-right: 20px;
+      display: block;
+      text-decoration: none;
+      width: 200px; }
+      .Gallery .list-group .list-item img {
+        height: 260px;
+        width: 200px;
+        border-radius: 5px; }
+  .Gallery .button {
+    position: absolute;
+    width: 35px;
+    height: 95px;
+    z-index: 2;
+    top: 110px; }
+    .Gallery .button-prev {
+      background: url(../../image/sprite-k14.png) -70px -137px no-repeat;
+      left: 0px;
+      background-color: rgba(224, 43, 43, 0.9); }
+    .Gallery .button-next {
+      background: url(../../image/sprite-k14.png) -115px -137px no-repeat;
+      right: 0px;
+      background-color: rgba(224, 43, 43, 0.9); }
+
+/*# sourceMappingURL=Gallery.css.map */

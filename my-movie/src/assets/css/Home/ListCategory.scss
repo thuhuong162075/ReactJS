@@ -1,0 +1,56 @@
+@import '../varible.scss';
+.ListCategory {
+    width: 350px;
+    .title {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        p {
+            margin-left: 20px;
+            font-size: $sizeTitle;
+            color: $colorTitle;
+        }
+    }
+    .content {
+        .group-list {
+            padding-left: 6px;
+            padding-bottom: 10px;
+            height: 450px;
+            background: $colorBox;
+            overflow-y: scroll;
+            &::-webkit-scrollbar {
+                width: 8px;
+                background-color: $colorBox;
+            } 
+            &::-webkit-scrollbar-thumb {
+                background-color: #4b4b4b;
+            }
+            .list-item {
+                border-bottom: 1px solid #4a4a4a;
+                display: flex;
+                padding: 10px;
+                img {
+                    width: 100px;
+                    height: 130px;
+                    margin-right: 10px;
+                    border: 1px solid #999999;
+                }
+                
+                .text {
+                    font-size: $sizeText;
+                    color: $colorTextBox;
+                    .filmName {
+                        color: #46e1ff;
+                    }
+                    .author {
+                        color: $colortext;
+                    }
+                    .episode {
+                        color: #fbb800;
+                    }
+                }
+            }
+            
+        }
+    }
+}

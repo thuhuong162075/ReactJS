@@ -1,0 +1,55 @@
+@font-face {
+    font-family: UTMCafetaRegular;
+    font-display:auto;
+    src: url('../font/UTMCafeta.woff') format('woff');
+  }
+@import '../varible.scss';
+.RightBox {
+    background: $colorBox;
+    width: 300px;
+    @import '../title.scss';
+    .content {
+        .group-list {
+            padding-left: 6px;
+            padding-bottom: 10px;
+            height: 400px;
+            overflow-y: scroll;
+            &::-webkit-scrollbar {
+                width: 6px;
+                background-color: $colorBox;
+            } 
+            &::-webkit-scrollbar-thumb {
+                background-color: $colorPage;
+            }
+            .list-item {
+                border-bottom: 1px solid #4a4a4a;
+                display: flex;
+                padding: 10px;
+                &.box-main {
+                    background: $colorPage;
+                    padding: 10px;
+                    img {
+                        width: 80px;
+                        height: 80px;
+                        margin-right: 5px;
+                    }
+                }
+                img {
+                    width: 60px;
+                    height: 60px;
+                    margin-right: 5px;
+                }
+                
+                .text {
+                    font-size: $sizeText;
+                    color: $colorTextBox;
+                    .episode {
+                        color: $colortext;
+                    }
+                }
+            }
+            
+        }
+        
+    }
+}
