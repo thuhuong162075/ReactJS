@@ -23,6 +23,8 @@
           text-transform: uppercase; }
       .Header .header-title .title img {
         border-radius: 50%; }
+    .Header .header-title .icon img {
+      margin-right: 20px; }
     .Header .header-title .search-box {
       position: relative; }
       .Header .header-title .search-box input {
@@ -59,5 +61,5 @@
             color: #ffffff; }
           .Header .header-navbar .navbar .navbar-nav .nav-item:hover {
             background: #131313; }
-          .Header .header-navbar .navbar .navbar-nav .nav-item.active {
-            background: #131313; }
+
+/*# sourceMappingURL=Header.css.map */

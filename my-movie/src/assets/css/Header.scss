@@ -25,6 +25,11 @@
                 border-radius: 50%;
             }
         }
+        .icon {
+            img {
+                margin-right: 20px;
+            }
+        }
         .search-box {
             position: relative;
             input {
@@ -71,9 +76,6 @@
                         color: #ffffff;
                     }
                     &:hover {
-                        background: #131313;
-                    }
-                    &.active {
                         background: #131313;
                     }
                 }

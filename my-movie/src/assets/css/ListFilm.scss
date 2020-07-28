@@ -1,7 +1,7 @@
 @import 'varible.scss';
 .ListFilm {
     margin-top: 20px;
-    width: 700px;
+    width: 100%;
     .title {
         display: flex;
         justify-content: space-between;
@@ -14,7 +14,7 @@
         }
         .cat-title {
             font-size: 25px;
-            color: #46e1ff;
+            color: #02345e;
         }
         .viewall {
             font-size: $sizeText;
@@ -25,16 +25,48 @@
             height: 400px;
             display: flex;
             flex-wrap: wrap;
-           
+            list-style-type: none;
             .list-item {
-                width: 165px;
-                height: 300px;
+                width: calc(100%/5 - 20px);
+                height: 320px;
+                margin-left: 10px;
                 margin-right: 10px;
-                margin-top: 15px;
+                margin-top: 20px;
                 background: $colorBox;
-                img {
+                position: relative;
+                .poster {
                     width: 100%;
-                    height: 240px;
+                    height: 250px;
+                }
+                .rate {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    background: rgba(0, 0, 0, 0.7);
+                    display: flex;
+                    padding: 6px;
+                    p {
+                        padding-left: 3px;
+                        opacity: 1.0;
+                        font-size: 12px;
+                        color: white;
+                        display: inline;
+                    }
+                }
+                .time {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    background: rgba(0, 0, 0, 0.7);
+                    display: flex;
+                    padding: 6px;
+                    p {
+                        padding-left: 3px;
+                        opacity: 1.0;
+                        font-size: 12px;
+                        color: white;
+                        display: inline;
+                    }
                 }
                 .text {
                     text-align: center;
@@ -43,13 +75,20 @@
                     .filmName {
                         color: #46e1ff;
                     }
-                    .author {
+                    .more {
+                        margin-top: 20px;
                         color: $colortext;
                     }
                     .episode {
                         color: #fbb800;
                     }
                 }
+                transition: transform 0.25s ease 0s;
+                &:hover {
+                    -ms-transform: scale(1.07); /* IE 9 */
+                    -webkit-transform: scale(1.07); /* Safari 3-8 */
+                    transform: scale(1.07); 
+                  }
             }
             
         }

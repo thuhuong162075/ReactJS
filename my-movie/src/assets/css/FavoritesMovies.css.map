@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,CAAE;EACE,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;;ACDb,gBAAiB;EACb,OAAO,EAAE,OAAO;EAChB,qBAAK;IACD,SAAS,EDAJ,IAAI;ICCT,KAAK,EAAE,OAAkB;IACzB,WAAW,EAAE,IAAI;IACjB,OAAO,EAAE,MAAM;IACf,UAAU,EAAE,MAAM",
+"sources": ["varible.scss","FavoritesMovies.scss"],
+"names": [],
+"file": "FavoritesMovies.css"
+}

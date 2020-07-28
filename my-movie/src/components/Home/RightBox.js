@@ -1,39 +1,38 @@
 import React from 'react';
 import '../../assets/css/Home/RightBox.css'
+import * as Urls from '../../constants/Config'
 
-function RightBox() {
+
+function RightBox(props) {
+    const { rightbox} = props
   return (
     <div className="RightBox">
         <div className="title">
             <span>PHIM BỘ ĐÃ HOÀN THÀNH</span>
         </div>
         <div className="content">
-            <ul className="group-list">
-                <li className="list-item box-main">
-                    <img src='https://cdn.idntimes.com/content-images/community/2020/05/img-20200514-154627-8a7f05e3ea08fc7a60a247a38246e110_600x400.jpg' />
-                    <div className="text">
-                        <p className="filmName">Đại chiến Kén Rể</p>
-                        <p className="author">Oh My Baby</p>
-                        <p className="episode">Tập 2</p>
-                    </div>
-                </li>
-                <li className="list-item">
-                    <img src='https://cdn.idntimes.com/content-images/community/2020/05/img-20200514-154627-8a7f05e3ea08fc7a60a247a38246e110_600x400.jpg' />
-                    <div className="text">
-                        <p className="filmName">Đại chiến Kén Rể</p>
-                        <p className="author">Oh My Baby</p>
-                        <p className="episode">Tập 2</p>
-                    </div>
-                </li>
-                <li className="list-item">
-                    <img src='https://cdn.idntimes.com/content-images/community/2020/05/img-20200514-154627-8a7f05e3ea08fc7a60a247a38246e110_600x400.jpg' />
-                    <div className="text">
-                        <p className="filmName">Đại chiến Kén Rể</p>
-                        <p className="author">Oh My Baby</p>
-                        <p className="episode">Tập 2</p>
-                    </div>
-                </li>
-            </ul>
+            {rightbox.length > 0 && (
+                <ul className="group-list">
+                    <li className="list-item box-main">
+                        <img alt="rightbox film" src={`${Urls.API_URL_IMAGE}${rightbox[rightbox.length-1].poster_path}`} />
+                        <div className="text">
+                            <p className="episode">{rightbox[rightbox.length-1].title}</p>
+                            <p className="author">{rightbox[rightbox.length-1].release_date}</p>
+                            
+                        </div>
+                    </li>
+                    {rightbox.map((item, index) => (
+                        <li className="list-item" key={index}>
+                            <img alt="rightbox film" src={`${Urls.API_URL_IMAGE}${item.poster_path}`} />
+                            <div className="text">
+                                <p className="episode">{item.title}</p>
+                                <p className="author">{item.release_date}</p>
+                                
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+                )}
         </div>
     </div>
   );
