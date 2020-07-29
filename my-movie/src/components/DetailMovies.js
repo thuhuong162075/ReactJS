@@ -26,6 +26,7 @@ function DetailMovies(props) {
         'GET', null).then(res=> {
             dispatch(actFetchDetailMovies(res.data));
         })
+       
         dispatch(activeTask(location.state.from.pathname));
     },[])
     if (Object.keys(movie).length > 0) {
