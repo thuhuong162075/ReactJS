@@ -8,7 +8,7 @@ import {
   } from "react-router-dom";
   
 function ListFilm(props) {
-    const {movies, matchUrl, location} = props
+    const {movies, location} = props
     if(movies.length > 0 ) {
         return (
             <div className="ListFilm">

@@ -17,11 +17,18 @@ function FavoritesMovies(props) {
       dispatch(actFetchFavoritesMovies(res.data.results));
     })
   },[]);
+
+  const { match, location } = props
   
   return (
     <div className="FavoritesMovies">
       {favoritesMovies.length > 0 && (
-        <ListFilm title="phim được yêu thích nhất" movies={favoritesMovies}/>
+        <ListFilm 
+          title="phim được yêu thích nhất"
+          movies={favoritesMovies}
+          matchUrl={match.url}
+          location={location}
+        />
       )}
       {favoritesMovies.length === 0 && (
         <div className="exc">Bạn chưa có phim yêu thích</div>

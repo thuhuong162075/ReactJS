@@ -8,14 +8,15 @@ import * as Urls from '../constants/Config';
 import { actFetchDetailMovies } from '../actions/index';
 import imgReturn from '../assets/image/return.svg';
 import imgHeart from '../assets/image/heart.svg';
-import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory } from "react-router-dom";
-
+import { useHistory, useLocation } from "react-router-dom";
+import {activeTask} from '../actions/index'
 
 function DetailMovies(props) {
     let history = useHistory();
-    const {match, location} = props
+    let location = useLocation();
+   
+    const {match} = props
     const movie = useSelector((state) => {
         return state.movie
       })
@@ -25,9 +26,8 @@ function DetailMovies(props) {
         'GET', null).then(res=> {
             dispatch(actFetchDetailMovies(res.data));
         })
+        dispatch(activeTask(location.state.from.pathname));
     },[])
-
-        console.log(location)
     if (Object.keys(movie).length > 0) {
         
         const paImg = movie.images.backdrops.filter((item, index)=>index<=4 && index>0)
