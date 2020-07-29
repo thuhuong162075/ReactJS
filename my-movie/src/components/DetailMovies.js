@@ -5,24 +5,29 @@ import clockImage from "../assets/image/time.svg"
 import watch from '../assets/image/next.svg'
 import callApi from '../utils/apiCaller';
 import * as Urls from '../constants/Config';
-import { connect } from 'react-redux';
 import { actFetchDetailMovies } from '../actions/index';
 import imgReturn from '../assets/image/return.svg';
 import imgHeart from '../assets/image/heart.svg';
 import { NavLink } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux'
+import { useHistory } from "react-router-dom";
+
 
 function DetailMovies(props) {
+    let history = useHistory();
     const {match, location} = props
-    
+    const movie = useSelector((state) => {
+        return state.movie
+      })
+    const dispatch = useDispatch()
     useEffect(() => {
         callApi(`https://api.themoviedb.org/3/movie/${match.params.id}?api_key=0aecc06bb4fadb06b5f071fef0c2ce6d&&language=en-US&append_to_response=videos,images&include_image_language=en,null`,
         'GET', null).then(res=> {
-            props.fetchDetailMovies(res.data)
-            console.log(res.data)
+            dispatch(actFetchDetailMovies(res.data));
         })
-    }, [])
-    const movie = props.detailMovies;
-    
+    },[])
+
+        console.log(location)
     if (Object.keys(movie).length > 0) {
         
         const paImg = movie.images.backdrops.filter((item, index)=>index<=4 && index>0)
@@ -99,14 +104,19 @@ function DetailMovies(props) {
                         <img key={index} alt={index+1} src={`${Urls.API_URL_IMAGE}${item.file_path}`}/>
                     ))}
                 </div>
-                <NavLink 
+                {/* <NavLink 
                     to={location.state.from.pathname} 
                 >
                     <button className="return">
                         <img src={imgReturn} alt="imgReturn" width={20} height={20} />
                         <p>Quay lại</p>
                     </button>
-                </NavLink>
+                </NavLink> */}
+                 <button className="return" onClick={() => history.goBack()}>
+                    <img src={imgReturn} alt="imgReturn" width={20} height={20} />
+                    <p>Quay lại</p>
+                </button>
+                 
                     
             </div>
         );
@@ -117,18 +127,6 @@ function DetailMovies(props) {
     }
     
 }
-const mapStateToProps = state => {
-    return {
-        detailMovies: state.movie
-    }
-}
-  
-const mapDispatchToProps = (dispatch, props) => {
-    return {
-        fetchDetailMovies: (movies) => {
-        dispatch(actFetchDetailMovies(movies));
-        }
-    }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(DetailMovies);
+
+export default DetailMovies;

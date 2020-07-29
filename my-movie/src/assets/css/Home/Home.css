@@ -10,6 +10,8 @@
       .Home .content-home .content-left .box {
         display: flex;
         justify-content: space-around; }
+      .Home .content-home .content-left .list-film .list-item {
+        width: 210px; }
     .Home .content-home .content-right {
       display: flex;
       flex-direction: column; }

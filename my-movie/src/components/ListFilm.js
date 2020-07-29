@@ -36,7 +36,7 @@ function ListFilm(props) {
                                         <NavLink 
                                             activeStyle={{background: '#131313' }} 
                                             to={{
-                                                pathname: `${matchUrl}/${item.id}`,
+                                                pathname: `${'detail/id='}${item.id}`,
                                                 state: {
                                                     from: location
                                                 }

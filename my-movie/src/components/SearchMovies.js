@@ -1,31 +1,42 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import '../assets/css/SearchMovies.css'
 import iconSearch from '../assets/image/search.svg'
 import ListFilm from './ListFilm';
 import callApi from '../utils/apiCaller'
 import {connect } from 'react-redux'
 import { filterTask,  actSearchMovies, onShowSearch} from '../actions/index';
-import * as Urls from '../constants/Config'
+import { useSelector, useDispatch } from 'react-redux'
+
 
 function SearchMovies(props) {
-  const {searchMovies, match, location, filter, showSearch} = props
+  const filter = useSelector((state) => {
+    return state.filterTable
+  })
+  const searchMovies = useSelector((state) => {
+    return state.movies
+  })
+  const showSearch = useSelector((state) => {
+    return state.showSearch
+  })
+  const dispatch = useDispatch()
+  const { match, location} = props
 
   function onChange(event) {
-    props.onFilterTable(event.target.value)
+    dispatch(filterTask(event.target.value))
     if(event.target.value === '') {
-      props.onShowSearch(false)
+      dispatch(onShowSearch(false))
     }
   }
   
   const onClickSearch = () => {
-    props.onShowSearch(true)
+    dispatch(onShowSearch(true))
     if(filter !== '') {
       callApi('https://api.themoviedb.org/3/discover/movie?api_key=0aecc06bb4fadb06b5f071fef0c2ce6d&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1',
       'GET',null).then(res=> {
-        props.onSearchItems(res.data.results)
+        dispatch(actSearchMovies(res.data.results))
       })
     }else {
-      props.onSearchItems([])
+      dispatch(actSearchMovies([]))
     }
   }
   return (
@@ -58,26 +69,5 @@ function SearchMovies(props) {
     </div>
   );
 }
-const mapStatetoProps = state => {
 
-  return {
-    filter: state.filterTable,
-    searchMovies: state.movies,
-    showSearch: state.showSearch
-  }
-}
-const mapDispatchToProps = (dispatch, props) => {
-  return {
-    onFilterTable: (filter) => {
-      dispatch(filterTask(filter))
-    },
-    onSearchItems: (movies) => {
-      dispatch(actSearchMovies(movies))
-    },
-    onShowSearch: (showSearch) => {
-      dispatch(onShowSearch(showSearch))
-    }
-  }
-}
-
-export default connect(mapStatetoProps, mapDispatchToProps)(SearchMovies);
+export default SearchMovies;

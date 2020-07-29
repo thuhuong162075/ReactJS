@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from '../assets/image/logopage.png'
 import '../assets/css/Header.css'
-import iconSearch from '../assets/image/search.svg'
 import icPopcorn from '../assets/image/popcorn.svg'
 import icCamera from '../assets/image/camera.svg'
 import icFilm from '../assets/image/film.svg'
@@ -60,9 +59,9 @@ function Header() {
                 <img src= {icTicket} alt="logo" style={{width: 40, height: 40}} />
 
             </div>
-            <div className="acount">
-                {/* <p><a className="signIn">Đăng ký/</a><a className="login" href="#">Đăng nhập</a></p> */}
-            </div>
+            {/* <div className="acount">
+                <p><a className="signIn">Đăng ký/</a><a className="login" href="#">Đăng nhập</a></p>
+            </div> */}
             
         </div>
         <div className="header-navbar">

@@ -1,14 +1,20 @@
 import React from 'react';
-import PopularMovies from './PopularMovies';
-import UpcomingMovies from './UpcomingMovies';
-import SearchMovies from './SearchMovies';
-import FavoritesMovies from './FavoritesMovies';
-import DetailMovies from './DetailMovies';
-import Home from './Home/Home';
+const PopularMovies = React.lazy(() => import('./PopularMovies'));
+const UpcomingMovies = React.lazy(() => import('./UpcomingMovies'));
+const SearchMovies = React.lazy(() => import('./SearchMovies'));
+const FavoritesMovies = React.lazy(() => import('./FavoritesMovies'));
+const DetailMovies = React.lazy(() => import('./DetailMovies'));
+const Home = React.lazy(() => import('./Home/Home'));
+
 
 const routes = [
     {
         path: "/",
+        exact: true,
+        main: ({match, location}) => <Home match={match} location={location} />
+    },
+    {
+        path: "/home",
         exact: true,
         main: ({match, location}) => <Home match={match} location={location} />
     },
@@ -30,17 +36,13 @@ const routes = [
     {
         path: "/favorites",
         exact: false,
-        main: () => <FavoritesMovies />
+        main: ({match, location}) => <FavoritesMovies match={match} location={location}/>
     },
     {
-        path: "/popularMovies/:id",
+        path: "/detail/id=:id",
         exact: true,
         main: ({match, location}) => <DetailMovies match={match} location={location}/>
     },
-    {
-        path: "/upcomingMovies/:id",
-        exact: true,
-        main: ({match, location}) => <DetailMovies match={match} location={location}/>
-    }
+   
 ];
 export default routes;

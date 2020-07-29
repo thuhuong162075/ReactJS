@@ -11,6 +11,11 @@
                 display: flex;
                 justify-content: space-around;
             }
+            .list-film {
+                .list-item {
+                    width: 210px;
+                }
+            }
         }
         .content-right {
             display: flex;
