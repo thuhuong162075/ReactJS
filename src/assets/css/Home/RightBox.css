@@ -1,0 +1,53 @@
+@font-face {
+  font-family: UTMCafetaRegular;
+  font-display: auto;
+  src: url("../font/UTMCafeta.woff") format("woff"); }
+* {
+  padding: 0;
+  margin: 0; }
+
+.RightBox {
+  background: #222;
+  width: 300px; }
+  .RightBox * {
+    padding: 0;
+    margin: 0; }
+  .RightBox .title {
+    padding: 10px; }
+    .RightBox .title span {
+      font: 25px UTMCafetaRegular;
+      color: #838383;
+      text-shadow: 1px 1px 1px #1a1a1a;
+      text-transform: uppercase; }
+  .RightBox .content .group-list {
+    padding-left: 6px;
+    padding-bottom: 10px;
+    height: 400px;
+    overflow-y: scroll; }
+    .RightBox .content .group-list::-webkit-scrollbar {
+      width: 6px;
+      background-color: #222; }
+    .RightBox .content .group-list::-webkit-scrollbar-thumb {
+      background-color: #131313; }
+    .RightBox .content .group-list .list-item {
+      border-bottom: 1px solid #4a4a4a;
+      display: flex;
+      padding: 10px; }
+      .RightBox .content .group-list .list-item.box-main {
+        background: #131313;
+        padding: 10px; }
+        .RightBox .content .group-list .list-item.box-main img {
+          width: 80px;
+          height: 80px;
+          margin-right: 5px; }
+      .RightBox .content .group-list .list-item img {
+        width: 60px;
+        height: 60px;
+        margin-right: 5px; }
+      .RightBox .content .group-list .list-item .text {
+        font-size: 14px;
+        color: #838383; }
+        .RightBox .content .group-list .list-item .text .episode {
+          color: #fff; }
+
+/*# sourceMappingURL=RightBox.css.map */

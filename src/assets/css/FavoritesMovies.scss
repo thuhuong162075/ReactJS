@@ -1,0 +1,11 @@
+@import 'varible.scss';
+.FavoritesMovies {
+    padding: 0 150px;
+    .exc {
+        font-size: $sizeHeader;
+        color: rgb(124, 165, 121);
+        font-weight: bold;
+        padding: 20px 0;
+        text-align: center;
+    }
+}

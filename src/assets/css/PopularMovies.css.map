@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,CAAE;EACE,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;;ACDb,cAAe;EACX,OAAO,EAAE,OAAO;EAChB,mBAAK;IACD,SAAS,EDAJ,IAAI;ICCT,KAAK,EAAE,OAAkB;IACzB,WAAW,EAAE,IAAI;IACjB,OAAO,EAAE,MAAM;IACf,UAAU,EAAE,MAAM",
+"sources": ["varible.scss","PopularMovies.scss"],
+"names": [],
+"file": "PopularMovies.css"
+}

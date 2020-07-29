@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+.Header {
+  background: #131313; }
+  .Header .header-title {
+    color: #fff;
+    padding: 0 150px;
+    height: 100px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center; }
+    .Header .header-title .title {
+      display: flex;
+      align-items: center; }
+      .Header .header-title .title .text {
+        margin-right: 10px;
+        text-align: center; }
+        .Header .header-title .title .text h2 {
+          color: #6ebec4;
+          font-size: 30px;
+          text-transform: uppercase; }
+      .Header .header-title .title img {
+        border-radius: 50%; }
+    .Header .header-title .icon img {
+      margin-right: 20px; }
+    .Header .header-title .search-box {
+      position: relative; }
+      .Header .header-title .search-box input {
+        padding: 10px 8px;
+        width: 350px;
+        border: 1px solid #222; }
+      .Header .header-title .search-box img {
+        position: absolute;
+        top: 6px;
+        right: 8px; }
+    .Header .header-title .acount {
+      margin-top: -40px; }
+      .Header .header-title .acount p a {
+        color: #fff;
+        text-decoration: none; }
+  .Header .header-navbar {
+    border-top: 1px solid #9A9010; }
+    .Header .header-navbar .navbar {
+      background-color: #5a4d4d;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .Header .header-navbar .navbar navbar-brand {
+        padding: 0 10px; }
+      .Header .header-navbar .navbar .navbar-nav {
+        list-style-type: none; }
+        .Header .header-navbar .navbar .navbar-nav .nav-item {
+          display: inline-block;
+          /*height: 100%;*/ }
+          .Header .header-navbar .navbar .navbar-nav .nav-item .nav-link {
+            padding: 10px 10px;
+            display: block;
+            text-decoration: none;
+            color: #ffffff; }
+          .Header .header-navbar .navbar .navbar-nav .nav-item:hover {
+            background: #131313; }
+
+/*# sourceMappingURL=Header.css.map */

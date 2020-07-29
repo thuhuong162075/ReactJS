@@ -1,0 +1,13 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+.title {
+  padding: 10px; }
+  .title span {
+    font: 25px UTMCafetaRegular;
+    color: #838383;
+    text-shadow: 1px 1px 1px #1a1a1a;
+    text-transform: uppercase; }
+
+/*# sourceMappingURL=title.css.map */

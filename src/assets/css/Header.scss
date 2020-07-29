@@ -1,0 +1,85 @@
+
+@import 'varible.scss';
+.Header {
+    background: #131313;
+    .header-title {
+        color: $colortext;
+        padding: 0 150px;
+        height: 100px;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        .title {
+            display: flex;
+            align-items: center;
+            .text {
+                margin-right: 10px;
+                text-align: center;
+                h2 {
+                    color: #6ebec4;
+                    font-size: 30px;
+                    text-transform: uppercase;
+                }
+            }
+            img {
+                border-radius: 50%;
+            }
+        }
+        .icon {
+            img {
+                margin-right: 20px;
+            }
+        }
+        .search-box {
+            position: relative;
+            input {
+                padding: 10px 8px;
+                width: 350px;
+                border: 1px solid #222;  
+            }
+            img {
+                position: absolute;
+                top: 6px;
+                right: 8px;
+            }
+        }
+        .acount {
+            margin-top: -40px;
+            p {
+                a {
+                    color: $colortext;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    .header-navbar {
+        border-top: 1px solid #9A9010;
+        .navbar {
+            background-color: #5a4d4d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            navbar-brand {
+                padding: 0 10px;
+            }
+            .navbar-nav {
+                list-style-type: none;
+                .nav-item {
+                    display: inline-block;
+                    /*height: 100%;*/
+                
+                    .nav-link {
+                        padding: 10px 10px;
+                        display: block;
+                        text-decoration: none;
+                        color: #ffffff;
+                    }
+                    &:hover {
+                        background: #131313;
+                    }
+                }
+            }
+        }
+    }
+}
