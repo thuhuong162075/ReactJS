@@ -17,7 +17,7 @@ function Header() {
         return state.activeMenu
     })
     
-    const ac = location.pathname.includes("/detail/id=") ? active : location.pathname
+    const ac = location.pathname.includes("/detail/name") ? active : location.pathname
 
     const menu = [
         {
