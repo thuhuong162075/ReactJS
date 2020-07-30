@@ -12,15 +12,22 @@
         .title {
             display: flex;
             align-items: center;
-            .text {
-                margin-right: 10px;
-                text-align: center;
-                h2 {
-                    color: #6ebec4;
-                    font-size: 30px;
-                    text-transform: uppercase;
+            .nav-link {
+                text-decoration: none;
+                .text {
+                    margin-right: 10px;
+                    text-align: center;
+                    h2 {
+                        color: #6ebec4;
+                        font-size: 30px;
+                        text-transform: uppercase;
+                    }
+                    p {
+                        color: white;
+                    }
                 }
             }
+            
             img {
                 border-radius: 50%;
             }
@@ -68,7 +75,9 @@
                 .nav-item {
                     display: inline-block;
                     /*height: 100%;*/
-                
+                    &.active {
+                        background: #131313;
+                    }
                     .nav-link {
                         padding: 10px 10px;
                         display: block;

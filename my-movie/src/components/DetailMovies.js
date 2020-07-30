@@ -8,26 +8,50 @@ import * as Urls from '../constants/Config';
 import { actFetchDetailMovies } from '../actions/index';
 import imgReturn from '../assets/image/return.svg';
 import imgHeart from '../assets/image/heart.svg';
-import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory } from "react-router-dom";
-
+import { useHistory, useLocation } from "react-router-dom";
+import {activeTask} from '../actions/index'
+import { actFetchFavoritesMovies } from '../actions/index';
 
 function DetailMovies(props) {
     let history = useHistory();
-    const {match, location} = props
+    let location = useLocation();
+    const dispatch = useDispatch()
+    const {match} = props
     const movie = useSelector((state) => {
         return state.movie
-      })
-    const dispatch = useDispatch()
+    })
+    const movieFavorite = useSelector((state) => {
+        return state.favoriteMovies
+    })
+   
     useEffect(() => {
         callApi(`https://api.themoviedb.org/3/movie/${match.params.id}?api_key=0aecc06bb4fadb06b5f071fef0c2ce6d&&language=en-US&append_to_response=videos,images&include_image_language=en,null`,
         'GET', null).then(res=> {
             dispatch(actFetchDetailMovies(res.data));
         })
+       
+        dispatch(activeTask(location.state.from.pathname));
     },[])
+    function containsObject(obj, list) {
+        var i;
+        for (i = 0; i < list.length; i++) {
+            if (list[i].id === obj.id) {
+                return true;
+            }
+        }
+        return false;
+    }
+    const onAddFavoriteFilm = () => {
+        if (containsObject(movie, movieFavorite)) {
+            alert("Phim đã nằm trong danh sách yêu thích")
+        }else {
+            dispatch(actFetchFavoritesMovies(movie));
+            alert("Phim đã được thêm vào danh sách yêu thích")
+        }
+    }
+    
 
-        console.log(location)
     if (Object.keys(movie).length > 0) {
         
         const paImg = movie.images.backdrops.filter((item, index)=>index<=4 && index>0)
@@ -90,13 +114,10 @@ function DetailMovies(props) {
                                 <p>Watch Trailer</p>
                             </button>
                         </a>
-                        <a className="nav-link" href="#" >
-                            <button className="btn add-to-list">
-                                <img src={imgHeart} alt="heart" width={20} height={20} />
-                                <p>Add to List</p>
-                            </button>        
-                        </a>
-                        
+                        <button className="btn add-to-list" onClick={onAddFavoriteFilm}>
+                            <img src={imgHeart} alt="heart" width={20} height={20} />
+                            <p>Add to List</p>
+                        </button>        
                     </div>
                 </div>
                 <div className="imgFilm">
@@ -104,20 +125,10 @@ function DetailMovies(props) {
                         <img key={index} alt={index+1} src={`${Urls.API_URL_IMAGE}${item.file_path}`}/>
                     ))}
                 </div>
-                {/* <NavLink 
-                    to={location.state.from.pathname} 
-                >
-                    <button className="return">
-                        <img src={imgReturn} alt="imgReturn" width={20} height={20} />
-                        <p>Quay lại</p>
-                    </button>
-                </NavLink> */}
                  <button className="return" onClick={() => history.goBack()}>
                     <img src={imgReturn} alt="imgReturn" width={20} height={20} />
                     <p>Quay lại</p>
                 </button>
-                 
-                    
             </div>
         );
     } else {

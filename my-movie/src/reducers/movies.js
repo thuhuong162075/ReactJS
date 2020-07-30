@@ -24,10 +24,7 @@ const myReducer = (state = initialState, action) => {
             state = action.movies
             return [...state];
         }
-        case Types.FAVORITES_MOVIES: {
-            state = action.movies
-            return [...state];
-        }
+       
         case Types.FETCH_SEARCH_MOVIES: {
             state = action.movies
             return [...state];

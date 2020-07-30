@@ -67,27 +67,27 @@
       padding-left: 100px; }
       .DetailMovies .info .button .nav-link {
         text-decoration: none; }
-        .DetailMovies .info .button .nav-link .btn {
-          border: none;
-          background: #2769b4;
-          display: flex;
-          padding: 10px;
-          justify-content: center;
-          align-items: center;
-          width: 150px;
-          border-radius: 40px; }
-          .DetailMovies .info .button .nav-link .btn.watch-trailer {
-            margin-bottom: 10px; }
-            .DetailMovies .info .button .nav-link .btn.watch-trailer p {
-              margin-left: 5px;
-              color: white; }
-          .DetailMovies .info .button .nav-link .btn.add-to-list p {
+      .DetailMovies .info .button .btn {
+        border: none;
+        background: #2769b4;
+        display: flex;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        border-radius: 40px; }
+        .DetailMovies .info .button .btn.watch-trailer {
+          margin-bottom: 10px; }
+          .DetailMovies .info .button .btn.watch-trailer p {
             margin-left: 5px;
             color: white; }
-          .DetailMovies .info .button .nav-link .btn:focus {
-            outline: none !important; }
-          .DetailMovies .info .button .nav-link .btn:hover {
-            background: #008080; }
+        .DetailMovies .info .button .btn.add-to-list p {
+          margin-left: 5px;
+          color: white; }
+        .DetailMovies .info .button .btn:focus {
+          outline: none !important; }
+        .DetailMovies .info .button .btn:hover {
+          background: #008080; }
   .DetailMovies .imgFilm {
     width: 25%; }
     .DetailMovies .imgFilm img {

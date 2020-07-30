@@ -12,12 +12,7 @@ export const actFetchUpcomingMovies = (movies) => {
         movies
     }
 }
-export const actFetchFavoritesMovies = (movies) => {
-    return {
-        type: Types.FAVORITES_MOVIES,
-        movies
-    }
-}
+
 export const actFetchDetailMovies = (movie) => {
     return {
         type: Types.DETAIL_MOVIES,
@@ -42,3 +37,17 @@ export const filterTask = (filter) => {
         filter
     }
 }
+export const activeTask = (active) => {
+    return {
+        type: Types.ACTIVE_MENU,
+        active
+    }
+}
+export const actFetchFavoritesMovies = (favoriteMovies) => {
+    return {
+        type: Types.FAVORITES_MOVIES,
+        favoriteMovies
+    }
+}
+
+

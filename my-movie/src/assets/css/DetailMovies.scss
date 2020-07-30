@@ -85,39 +85,39 @@
             padding-left: 100px;
             .nav-link {
                 text-decoration: none;
-                .btn {
-                    border: none;
-                    background: rgb(39, 105, 180);
-                    display: flex;
-                    padding: 10px;
-                    justify-content: center;
-                    align-items: center;
-                    width: 150px;
-                    border-radius: 40px;
-    
-                    &.watch-trailer {
-                        margin-bottom: 10px;
-                        p {
-                            margin-left: 5px;
-                            color: white;
-                        }
-                    }
-                    &.add-to-list {
-                        p {
-                            margin-left: 5px;
-                            color: white;
-                        }
-                        
-                    }
-                    &:focus {
-                        outline:none!important;
-                    }
-                    &:hover {
-                        background: #008080;
+                
+            }
+            .btn {
+                border: none;
+                background: rgb(39, 105, 180);
+                display: flex;
+                padding: 10px;
+                justify-content: center;
+                align-items: center;
+                width: 150px;
+                border-radius: 40px;
+
+                &.watch-trailer {
+                    margin-bottom: 10px;
+                    p {
+                        margin-left: 5px;
+                        color: white;
                     }
                 }
+                &.add-to-list {
+                    p {
+                        margin-left: 5px;
+                        color: white;
+                    }
+                    
+                }
+                &:focus {
+                    outline:none!important;
+                }
+                &:hover {
+                    background: #008080;
+                }
             }
-            
         }    
         
     }
@@ -153,5 +153,4 @@
             font-size: 16px;
         }
     }
-    
 }

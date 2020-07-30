@@ -6,9 +6,10 @@ import clockImage from "../assets/image/time.svg"
 import {
     NavLink
   } from "react-router-dom";
+  import urlSlug from 'url-slug'
   
 function ListFilm(props) {
-    const {movies, matchUrl, location} = props
+    const {movies, location} = props
     if(movies.length > 0 ) {
         return (
             <div className="ListFilm">
@@ -36,7 +37,10 @@ function ListFilm(props) {
                                         <NavLink 
                                             activeStyle={{background: '#131313' }} 
                                             to={{
-                                                pathname: `${'detail/id='}${item.id}`,
+                                                pathname: `${'detail/name='}${urlSlug(
+                                                    item.title,
+                                                    '-',
+                                                    urlSlug.transformers.lowercase)}${'?id='}${item.id}`,
                                                 state: {
                                                     from: location
                                                 }
