@@ -39,7 +39,7 @@ const routes = [
         main: ({match, location}) => <FavoritesMovies match={match} location={location}/>
     },
     {
-        path: "/detail/name=:name?id=:id",
+        path: "/detail/id=:id",
         exact: true,
         main: ({match, location}) => <DetailMovies match={match} location={location}/>
     },

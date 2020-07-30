@@ -3,6 +3,7 @@ import '../assets/css/SearchMovies.css'
 import iconSearch from '../assets/image/search.svg'
 import ListFilm from './ListFilm';
 import callApi from '../utils/apiCaller'
+import {connect } from 'react-redux'
 import { filterTask,  actSearchMovies, onShowSearch} from '../actions/index';
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -45,7 +46,7 @@ function SearchMovies(props) {
             className="input"
             placeholder="Tìm kiếm..." 
             type="text"
-            value={filter}
+            // value={searchItem}
             onChange={onChange}
           />
           <img src={iconSearch} alt="icon search" style={{width: 25, height: 25}} onClick={onClickSearch}/>

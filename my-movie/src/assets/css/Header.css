@@ -14,17 +14,13 @@
     .Header .header-title .title {
       display: flex;
       align-items: center; }
-      .Header .header-title .title .nav-link {
-        text-decoration: none; }
-        .Header .header-title .title .nav-link .text {
-          margin-right: 10px;
-          text-align: center; }
-          .Header .header-title .title .nav-link .text h2 {
-            color: #6ebec4;
-            font-size: 30px;
-            text-transform: uppercase; }
-          .Header .header-title .title .nav-link .text p {
-            color: white; }
+      .Header .header-title .title .text {
+        margin-right: 10px;
+        text-align: center; }
+        .Header .header-title .title .text h2 {
+          color: #6ebec4;
+          font-size: 30px;
+          text-transform: uppercase; }
       .Header .header-title .title img {
         border-radius: 50%; }
     .Header .header-title .icon img {
@@ -58,8 +54,6 @@
         .Header .header-navbar .navbar .navbar-nav .nav-item {
           display: inline-block;
           /*height: 100%;*/ }
-          .Header .header-navbar .navbar .navbar-nav .nav-item.active {
-            background: #131313; }
           .Header .header-navbar .navbar .navbar-nav .nav-item .nav-link {
             padding: 10px 10px;
             display: block;

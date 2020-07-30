@@ -42,9 +42,3 @@ export const filterTask = (filter) => {
         filter
     }
 }
-export const activeTask = (active) => {
-    return {
-        type: Types.ACTIVE_MENU,
-        active
-    }
-}
