@@ -49,5 +49,35 @@ export const actFetchFavoritesMovies = (favoriteMovies) => {
         favoriteMovies
     }
 }
+export const actPagination = (pagination) => {
+    return {
+        type: Types.PAGINATION,
+        pagination
+    }
+}
+export const actPaginationHome = (pagination) => {
+    return {
+        type: Types.PAGINATION_HOME,
+        pagination
+    }
+}
+export const actPaginationUpcoming = (pagination) => {
+    return {
+        type: Types.PAGINATION_UPCOMING,
+        pagination
+    }
+}
+export const actPaginationSearch= (pagination) => {
+    return {
+        type: Types.PAGINATION_SEARCH,
+        pagination
+    }
+}
+export const actPaginationFavorite= (pagination) => {
+    return {
+        type: Types.PAGINATION_FAVORITE,
+        pagination
+    }
+}
 
 

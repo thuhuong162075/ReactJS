@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import '../assets/css/SearchMovies.css'
 import iconSearch from '../assets/image/search.svg'
 import ListFilm from './ListFilm';
 import callApi from '../utils/apiCaller'
-import { filterTask,  actSearchMovies, onShowSearch} from '../actions/index';
+import { filterTask,  actSearchMovies, onShowSearch, actPaginationSearch} from '../actions/index';
 import { useSelector, useDispatch } from 'react-redux'
 
 
@@ -17,6 +17,10 @@ function SearchMovies(props) {
   const showSearch = useSelector((state) => {
     return state.showSearch
   })
+  const pagination = useSelector((state) => {
+    return state.pagination
+  })
+  const { _page } = pagination
   const dispatch = useDispatch()
   const { match, location} = props
 
@@ -26,17 +30,25 @@ function SearchMovies(props) {
       dispatch(onShowSearch(false))
     }
   }
-  
   const onClickSearch = () => {
     dispatch(onShowSearch(true))
     if(filter !== '') {
-      callApi('https://api.themoviedb.org/3/discover/movie?api_key=0aecc06bb4fadb06b5f071fef0c2ce6d&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1',
-      'GET',null).then(res=> {
-        dispatch(actSearchMovies(res.data.results))
-      })
+        callApi(`${'https://api.themoviedb.org/3/discover/movie?api_key=0aecc06bb4fadb06b5f071fef0c2ce6d&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page='}${_page}`,
+        'GET',null).then(res=> {
+          dispatch(actPaginationSearch({
+            page: res.data.page,
+            total_pages: res.data.total_pages
+          }))
+          dispatch(actSearchMovies(res.data.results))
+        })
     }else {
       dispatch(actSearchMovies([]))
     }
+  }
+  const onPageChange = (newPage) => {
+    dispatch(actPaginationSearch({
+      page: newPage
+    }))
   }
   return (
     <div className="SearchMovies">
@@ -58,6 +70,8 @@ function SearchMovies(props) {
                 movies={searchMovies} 
                 matchUrl={match.url}
                 location={location}
+                pagination={pagination}
+                onPageChange= {onPageChange}
               />
             )}
             {searchMovies.length === 0 && filter !== '' && (

@@ -1,8 +1,7 @@
 import React, {useEffect} from 'react';
 import '../assets/css/FavoritesMovies.css'
 import ListFilm from './ListFilm';
-import { actFetchFavoritesMovies } from '../actions/index';
-import callApi from '../utils/apiCaller'
+import {  actPaginationFavorite } from '../actions/index';
 import { useSelector, useDispatch } from 'react-redux'
 
 
@@ -10,14 +9,23 @@ function FavoritesMovies(props) {
   const dispatch = useDispatch()
   const favoritesMovies = useSelector((state) => {
     return state.favoriteMovies
-})
+  })
+  const pagination = useSelector((state) => {
+    return state.pagiFavorite
+  })
+  const { _page } = pagination
+  useEffect(() => {
+    dispatch(actPaginationFavorite({
+      page: 1,
+      total_pages: favoritesMovies.length
+    }))
+    },[_page])
   
-  // useEffect(() => {
-  //   callApi('https://api.themoviedb.org/3/discover/movie?api_key=0aecc06bb4fadb06b5f071fef0c2ce6d&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1',
-  //     'GET', null).then(res=> {
-  //       dispatch(actFetchFavoritesMovies(res.data.results));
-  //     })
-  // },[]);
+  const onPageChange = (newPage) => {
+    dispatch(actPaginationFavorite({
+      page: newPage
+    }))
+  }
 
   const { match, location } = props
   
@@ -29,6 +37,8 @@ function FavoritesMovies(props) {
           movies={favoritesMovies}
           matchUrl={match.url}
           location={location}
+          pagination={pagination}
+          onPageChange= {onPageChange}
         />
       )}
       {favoritesMovies.length === 0 && (

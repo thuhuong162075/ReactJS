@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './Header';
 import routes from './Router'
+import Footer from './Footer';
 
 function Layout() {
   return (
@@ -15,6 +16,7 @@ function Layout() {
                             ))}                     
                         </Switch>
                     </Suspense>
+                <Footer/>
             </Router>
       </div>
   );
