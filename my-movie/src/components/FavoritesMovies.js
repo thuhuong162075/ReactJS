@@ -17,7 +17,7 @@ function FavoritesMovies(props) {
   useEffect(() => {
     dispatch(actPaginationFavorite({
       page: 1,
-      total_pages: favoritesMovies.length
+      total_pages: favoritesMovies.length > 20 ? Math.ceil(favoritesMovies.length/20) : 1
     }))
     },[_page])
   
