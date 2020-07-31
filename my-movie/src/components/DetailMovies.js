@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import '../assets/css/DetailMovies.css'
 import startImage from '../assets/image/star.svg'
 import clockImage from "../assets/image/time.svg"
@@ -12,6 +12,9 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useHistory, useLocation } from "react-router-dom";
 import {activeTask} from '../actions/index'
 import { actFetchFavoritesMovies } from '../actions/index';
+import ModalVideo from 'react-modal-video'
+import YoutubeModal from 'react-youtube-modal'
+
 
 function DetailMovies(props) {
     let history = useHistory();
@@ -51,8 +54,9 @@ function DetailMovies(props) {
         }
     }
     
-
     if (Object.keys(movie).length > 0) {
+        console.log(movie)
+
         
         const paImg = movie.images.backdrops.filter((item, index)=>index<=4 && index>0)
         return (
@@ -108,12 +112,18 @@ function DetailMovies(props) {
                         </div>
                     </div>
                     <div className="button">
-                        <a className="nav-link" href={`${Urls.API_URL_WATCH}${movie.videos.results[0]['key']}`} >
+                        {/* <a className="nav-link" href={`${Urls.API_URL_WATCH}${movie.videos.results[0]['key']}`} >
                             <button className="btn watch-trailer">
                                 <img src={watch} alt="watch" width={20} height={20} />
                                 <p>Watch Trailer</p>
                             </button>
-                        </a>
+                        </a> */}
+                        <YoutubeModal width={1000} height={400} paddingTop={10} videoId={movie.videos.results[0].key}>
+                            <button type="button" className="btn watch-trailer">
+                                    <img src={watch} alt="watch" width={20} height={20} />
+                                    <p>Watch Trailer</p>
+                            </button>
+                        </YoutubeModal>
                         <button className="btn add-to-list" onClick={onAddFavoriteFilm}>
                             <img src={imgHeart} alt="heart" width={20} height={20} />
                             <p>Add to List</p>
