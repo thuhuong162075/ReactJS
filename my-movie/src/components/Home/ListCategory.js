@@ -2,9 +2,13 @@ import React from 'react';
 import startImage from "../../assets/image/star.svg"
 import '../../assets/css/Home/ListCategory.css'
 import * as Urls from '../../constants/Config'
+import {
+    NavLink
+  } from "react-router-dom";
+import urlSlug from 'url-slug'
 
 function ListCategory(props) {
-    const {listCat} = props
+    const {listCat, location} = props
     if(!listCat) {
         return (
           <div></div>
@@ -21,9 +25,40 @@ function ListCategory(props) {
                 <ul className="group-list">
                     {listCat.map((item, index) => (
                         <li className="list-item" key={index}>
-                            <img src={`${Urls.API_URL_IMAGE}${item.poster_path}`} alt='film'/>
+                            <div className="img-tooltip">
+                                <NavLink 
+                                    activeStyle={{background: '#131313' }} 
+                                    to={{
+                                        pathname: `${'detail/name='}${urlSlug(
+                                            item.title,
+                                            '-',
+                                            urlSlug.transformers.lowercase)}${'?id='}${item.id}`,
+                                        state: {
+                                            from: location
+                                        }
+                                    }} 
+                                >
+                                    <img src={`${Urls.API_URL_IMAGE}${item.poster_path}`} alt='film'/>
+                                </NavLink>
+                                <div className="hover-img">{item.title}</div>
+                            </div>
+                            
                             <div className="text">
-                                <p className="episode">{item.title}</p>
+                                <NavLink 
+                                    activeStyle={{background: '#131313' }} 
+                                    to={{
+                                        pathname: `${'detail/name='}${urlSlug(
+                                            item.title,
+                                            '-',
+                                            urlSlug.transformers.lowercase)}${'?id='}${item.id}`,
+                                        state: {
+                                            from: location
+                                        }
+                                    }} 
+                                    style={{textDecoration:'none'}}
+                                >
+                                    <p className="episode">{item.title}</p>
+                                </NavLink>
                                 <p className="author">{item.release_date}</p>
                             </div>
                         </li>

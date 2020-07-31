@@ -19,15 +19,31 @@
       color: #838383;
       text-shadow: 1px 1px 1px #1a1a1a;
       text-transform: uppercase; }
-  .FilmHot .content img {
-    padding-right: 10px;
-    padding-left: 10px;
-    width: calc(100% - 20px);
-    height: 400px; }
-  .FilmHot .content p {
-    padding: 8px 0;
-    text-align: center;
-    font-size: 20px;
-    color: #fff; }
-
-/*# sourceMappingURL=FilmHot.css.map */
+  .FilmHot .content {
+    position: relative; }
+    .FilmHot .content .img-tooltip:hover .hover-img {
+      display: block;
+      z-index: 9999999;
+      position: absolute; }
+    .FilmHot .content .img-tooltip img {
+      padding-right: 10px;
+      padding-left: 10px;
+      width: calc(100% - 20px);
+      height: 400px; }
+    .FilmHot .content .img-tooltip .hover-img {
+      word-break: break-word;
+      display: none;
+      background: #ffffcc;
+      border: 1px solid black;
+      z-index: 9999999;
+      position: absolute;
+      top: 30%;
+      left: 20%;
+      padding: 0 5px;
+      font-size: 12px;
+      color: black; }
+    .FilmHot .content p {
+      padding: 8px 0;
+      text-align: center;
+      font-size: 20px;
+      color: #fff; }

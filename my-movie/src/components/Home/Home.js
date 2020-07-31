@@ -45,8 +45,8 @@ function Home(props) {
       <div className="content-home" style={{marginTop: "30px"}}>
         <div className="content-left">
           <div className="box">
-            <FilmHot title="Phim bộ mới nhất" filmHot={filmHot}/>
-            <RightBox rightbox= {rightbox}/>
+            <FilmHot title="Phim bộ mới nhất" filmHot={filmHot}  location={location}/>
+            <RightBox rightbox= {rightbox} location={location}/>
           </div>
           <div className="list-film">
             <ListFilm 
@@ -61,7 +61,7 @@ function Home(props) {
         </div>
         <div className="content-right">
           <div className="list-category">
-            <ListCategory listCat = {listCat}/>
+            <ListCategory listCat = {listCat} location={location}/>
           </div>
         </div>
       </div>

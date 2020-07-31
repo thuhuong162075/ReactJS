@@ -33,20 +33,20 @@
       background: #222;
       position: relative;
       transition: transform 0.25s ease 0s; }
-      .ListFilm .content .group-list .list-item .img-tooltip {
-        position: relative; }
-        .ListFilm .content .group-list .list-item .img-tooltip:hover .hover-img {
-          display: block;
-          position: absolute; }
+      .ListFilm .content .group-list .list-item .img-tooltip:hover .hover-img {
+        display: block;
+        z-index: 9999999;
+        position: absolute; }
       .ListFilm .content .group-list .list-item .poster {
         width: 100%;
         height: 250px; }
       .ListFilm .content .group-list .list-item .hover-img {
-        white-space: nowrap;
+        word-break: break-word;
         display: none;
         background: #ffffcc;
         border: 1px solid black;
-        z-index: 3000;
+        z-index: 9999999;
+        position: absolute;
         top: 30%;
         left: 20%;
         padding: 0 5px;
@@ -94,7 +94,8 @@
         /* IE 9 */
         -webkit-transform: scale(1.07);
         /* Safari 3-8 */
-        transform: scale(1.07); }
+        transform: scale(1.07);
+        z-index: 5000; }
   .ListFilm .content .pagination {
     margin-top: 30px;
     display: flex;

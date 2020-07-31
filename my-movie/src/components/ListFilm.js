@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import '../assets/css/ListFilm.css'
 import * as Urls from '../constants/Config'
 import startImage from '../assets/image/star.svg'
@@ -26,14 +26,18 @@ import {
     if(d<=1){
         start=1;
         end= total > distance ? distance : total;
-        if(d==1) first=false
+        if(d===1) first=false
     } else if(e>=total){
         end=total;
         start=total-distance+1;
-        if(d==total) first=false
+        if(d===total) first=false
     }else{
         start=page-2;
         end=page+2;
+    }
+    if(total === distance) {
+        first=false;
+        last=false;
     }
     return {first:first,last:last,start:start,end:end}
     }
@@ -64,7 +68,6 @@ function ListFilm(props) {
         arr.push('next')
         arr.push(_totalPage)
     }
-    console.log(arr)
     if(movies.length > 0 ) {
         return (
             <div className="ListFilm">
@@ -92,9 +95,6 @@ function ListFilm(props) {
                                         </NavLink>
                                         <div className="hover-img">{item.title}</div>
                                     </div>
-                                    
-                                        
-                                    
                                     {item.vote_average > 0 && (
                                         <div className="rate">
                                             <img src={startImage} alt="icon start" width={15} height={15} />

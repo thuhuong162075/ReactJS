@@ -1,7 +1,7 @@
 import * as Types from '../../constants/ActionTypes'
 var initialState = {
     _page: 1,
-    _totalPage: null,
+    _totalPage: 1,
 };
 
 const myReducer = (state = initialState, action) => {

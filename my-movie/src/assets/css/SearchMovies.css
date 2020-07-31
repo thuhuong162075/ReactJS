@@ -3,8 +3,7 @@
   margin: 0; }
 
 .SearchMovies {
-  padding: 0 150px;
-  height: 400px; }
+  padding: 0 150px; }
   .SearchMovies .search {
     display: flex;
     align-items: center;

@@ -32,7 +32,24 @@
     .RightBox .content .group-list .list-item {
       border-bottom: 1px solid #4a4a4a;
       display: flex;
-      padding: 10px; }
+      padding: 10px;
+      position: relative; }
+      .RightBox .content .group-list .list-item .img-tooltip:hover .hover-img {
+        display: block;
+        z-index: 9999999;
+        position: absolute; }
+      .RightBox .content .group-list .list-item .hover-img {
+        word-break: break-word;
+        display: none;
+        background: #ffffcc;
+        border: 1px solid black;
+        z-index: 9999999;
+        position: absolute;
+        top: 30%;
+        left: 20%;
+        padding: 0 5px;
+        font-size: 12px;
+        color: black; }
       .RightBox .content .group-list .list-item.box-main {
         background: #131313;
         padding: 10px; }

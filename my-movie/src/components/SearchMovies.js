@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import '../assets/css/SearchMovies.css'
 import iconSearch from '../assets/image/search.svg'
 import ListFilm from './ListFilm';
@@ -18,7 +18,7 @@ function SearchMovies(props) {
     return state.showSearch
   })
   const pagination = useSelector((state) => {
-    return state.pagination
+    return state.pagiSearch
   })
   const { _page } = pagination
   const dispatch = useDispatch()
@@ -75,8 +75,13 @@ function SearchMovies(props) {
               />
             )}
             {searchMovies.length === 0 && filter !== '' && (
-            <div className="exc">Không tìm thấy kết quả phù hợp</div>
+            <div className="exc" style={{height: '400px'}}>Không tìm thấy kết quả phù hợp</div>
             )}
+          </div>
+        )}
+        {!showSearch && (
+          <div style={{height: '400px'}}>
+           
           </div>
         )}
     </div>
