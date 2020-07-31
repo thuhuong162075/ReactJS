@@ -27,7 +27,7 @@ function DetailMovies(props) {
     const movieFavorite = useSelector((state) => {
         return state.favoriteMovies
     })
-   
+   console.log(match)
     useEffect(() => {
         callApi(`https://api.themoviedb.org/3/movie/${match.params.id}?api_key=0aecc06bb4fadb06b5f071fef0c2ce6d&&language=en-US&append_to_response=videos,images&include_image_language=en,null`,
         'GET', null).then(res=> {
